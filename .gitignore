@@ -1,0 +1,5 @@
+# Ignore uploaded blog images
+uploads/blog/
+
+# Keep folder structure
+!uploads/blog/.gitkeep
