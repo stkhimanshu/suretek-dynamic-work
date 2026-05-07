@@ -22,7 +22,7 @@ if (isset($_SESSION['last_activity'])) {
 
         session_destroy();
 
-        header("Location: login.php?expired=1");
+        header("Location:" .  ADMIN_PATH . '/login.php?expired=1');
 
         exit;
     }

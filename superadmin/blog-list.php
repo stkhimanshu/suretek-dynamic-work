@@ -1,8 +1,7 @@
 <?php
 
 /** @var mysqli $conn */
-include("../includes/config.php");
-include("auth-check.php");
+include("../../../includes/config.php");
 
 $page = max(1, (int)($_GET['page'] ?? 1));
 
@@ -97,7 +96,7 @@ $result = mysqli_query($conn, $query);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 </head>
 
-<body class="bg-[#f5f4f0] min-h-screen p-4 sm:p-6 lg:p-8">
+<body class="bg-[#f5f4f0] min-h-screen">
 
     <div class="max-w-7xl mx-auto bg-white rounded-2xl shadow-sm p-4 sm:p-6">
 
@@ -108,7 +107,7 @@ $result = mysqli_query($conn, $query);
                 <p class="text-sm text-gray-500 mt-0.5">Manage all blogs</p>
             </div>
             <div>
-                <a href="blog-add.php"
+                <a href="<?= ADMIN_PATH . "/pages/blogs/create.php" ?>"
                     class="inline-flex items-center justify-center gap-1.5 bg-[#a22426] hover:bg-[#8a1e20] text-white px-4 py-2.5 rounded-lg text-sm font-medium mb-2 transition-colors w-full sm:w-auto">
                     <span class="text-base leading-none">+</span> Add Blog
                 </a>
@@ -422,8 +421,8 @@ $result = mysqli_query($conn, $query);
         // Shared colour map for status dropdowns (desktop + mobile)
         const statusColors = {
             0: ['bg-yellow-50', 'text-yellow-700', 'border-yellow-200'],
-            1: ['bg-green-50',  'text-green-700',  'border-green-200'],
-            2: ['bg-red-50',    'text-red-700',    'border-red-200'],
+            1: ['bg-green-50', 'text-green-700', 'border-green-200'],
+            2: ['bg-red-50', 'text-red-700', 'border-red-200'],
         };
 
         const allClasses = Object.values(statusColors).flat();

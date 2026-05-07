@@ -5,9 +5,8 @@
 </style>
 <?php
 /** @var mysqli $conn */
-include(__DIR__ . "/../includes/config.php");
-include(__DIR__ . "/../includes/blog-service.php");
-include("auth-check.php");
+include("../../../includes/config.php");
+include("../../../includes/blog-service.php");
 
 if (isset($_POST['add_category'])) {
     $catTitle = trim($_POST['cat_title'] ?? '');
@@ -56,22 +55,8 @@ if (isset($_POST['add_category'])) {
 
 <body class="min-h-screen bg-[#f5f4f0] text-[#424649]">
 
-    <!-- ══ NAVBAR ══ -->
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <div class="max-w-[130px]">
-                <img src="https://www.suretekinfosoft.com/assets/images/logo1.png" class="w-[130px]" alt="Logo">
-            </div>
-            <div class="flex items-center gap-1.5 text-sm text-[#424649]/60">
-                <a href="#" class="hover:text-[#a22426] transition-colors no-underline">Dashboard</a>
-                <span>/</span>
-                <span class="text-[#a22426] font-medium">New Post</span>
-            </div>
-        </div>
-    </nav>
-
     <!-- ══ PAGE BODY ══ -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="">
         <div class="mb-8">
             <h1 class="display text-3xl font-semibold text-[#424649]">Create New Blog Post</h1>
             <p class="mt-1 text-sm text-[#424649]/55">Fill in the details below to publish your article</p>

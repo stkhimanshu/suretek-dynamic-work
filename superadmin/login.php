@@ -1,9 +1,8 @@
 <?php
-
+require_once __DIR__ . '/config/global-variables.php';
 session_start();
 if (isset($_SESSION['admin_id'])) {
-
-    header("Location: blog-list.php");
+    header("Location:" .  ADMIN_PATH . '/pages/dashboard.php');
     exit;
 }
 
@@ -39,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $_SESSION['admin_role'] = $user['role'];
 
-        header("Location: blog-list.php");
+        header("Location:" .  ADMIN_PATH . '/pages/dashboard.php');
         exit;
     } else {
 

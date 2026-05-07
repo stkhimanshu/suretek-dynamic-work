@@ -1,0 +1,14 @@
+.sidebar-link {
+    transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.sidebar-link-active {
+    border-left: 4px solid #004e9f;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
