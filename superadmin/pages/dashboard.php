@@ -17,7 +17,7 @@ p-10 text-white shadow-lg">
         <div class="space-y-2">
 
             <h1 class="text-4xl font-bold">
-                Welcome back, Admin!
+                Welcome back, <?php print_r($_SESSION['admin_name']) ?>!
             </h1>
 
             <p class="text-blue-100">
