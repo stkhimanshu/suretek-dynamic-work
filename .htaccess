@@ -1,0 +1,265 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^suretekinfosoft\.com$ [NC]
+RewriteRule ^(.*)$ https://www.suretekinfosoft.com/$1 [L,R=301]
+
+#RewriteCond %{HTTP_HOST} !^www\.suretekinfosoft\.com [NC]
+
+#RewriteRule ^(.*)$ https://www.suretekinfosoft.com/$1 [L,R=301]
+
+# 🔹 Skip redirect if the request is already for the "portfolio" subdomain
+RewriteCond %{HTTP_HOST} ^portfolio\.suretekinfosoft\.com$ [NC]
+RewriteRule ^ - [L]
+
+# 🔹 Redirect all other non-www requests to www
+RewriteCond %{HTTP_HOST} !^www\.suretekinfosoft\.com$ [NC]
+RewriteCond %{HTTP_HOST} ^suretekinfosoft\.com$ [NC]
+RewriteRule ^(.*)$ https://www.suretekinfosoft.com/$1 [L,R=301]
+
+
+
+# Ensure mod_rewrite is enabled
+
+RewriteEngine On
+
+
+
+# ==========================================================
+
+# 301 REDIRECTS FROM OLD URLs TO NEW URLs
+
+# ==========================================================
+
+
+
+# --- ABOUT / COMPANY PAGES ---
+
+Redirect 301 /about_us.html https://suretekinfosoft.com/about-us.php
+
+Redirect 301 /vision-and-mission.html https://suretekinfosoft.com/about-us.php
+
+
+
+# --- SERVICES SECTION ---
+
+Redirect 301 /services.html https://suretekinfosoft.com/services.php
+
+Redirect 301 /custom_software_development.html https://suretekinfosoft.com/custom-software-development.php
+
+Redirect 301 /web_application_development.html https://suretekinfosoft.com/web-application-development.php
+
+Redirect 301 /mobile_application_development.html https://suretekinfosoft.com/mobile-app-development.php
+
+Redirect 301 /qa_testing.html https://suretekinfosoft.com/quality-assurance.php
+
+Redirect 301 /technology_consulting.html https://suretekinfosoft.com/it-consulting.php
+
+Redirect 301 /maintanence_&_support.html https://suretekinfosoft.com/maintenance-and-support.php
+
+Redirect 301 /check_responsive.html https://suretekinfosoft.com/web-application-development.php
+
+
+
+# --- INDUSTRIES / VERTICALS ---
+
+Redirect 301 /verticals.html https://suretekinfosoft.com/industries.php
+
+Redirect 301 /automated_trading.html https://suretekinfosoft.com/financial-services-and-fintech.php
+
+Redirect 301 /logistics.html https://suretekinfosoft.com/logistics-and-supply-chain.php
+
+Redirect 301 /mobile_solutions.html https://suretekinfosoft.com/mobile-solutions.php
+
+Redirect 301 /e_learning.html https://suretekinfosoft.com/e-learning-solutions.php
+
+Redirect 301 /e_commerce.html https://suretekinfosoft.com/e-commerce-development.php
+
+
+
+# --- COMPANY OPERATIONS / INTERNAL PAGES ---
+
+Redirect 301 /delivery.html https://suretekinfosoft.com/
+
+Redirect 301 /billing.html https://suretekinfosoft.com/
+
+Redirect 301 /global_it.html https://suretekinfosoft.com/
+
+
+
+# --- CASE STUDIES & BLOGS ---
+
+Redirect 301 /case_studies.html https://suretekinfosoft.com/case-studies.php
+
+Redirect 301 /blogs.html https://suretekinfosoft.com/blogs.php
+
+
+# ---- changed new 11-11-25 case-studies and blogs details pages ----
+Redirect 301 /AI-based-chatbot.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /drop-shipping-ecommerce-platform.html https://www.suretekinfosoft.com/case-studies/how-suretek-built-a-scalable-subscription-based-dropshipping-platform-for-a-shopify-entrepreneur.php
+Redirect 301 /Visitor-Mangement.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /magento-based-ecommerce.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /Testing-augment-reality-mobile-app.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /cryptocurrency.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /document-management.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /cryptocurrency.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /Magento-Ecommerce-Web-app.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /Cost-of-a-food-delivery-app.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /geo-fencing-enabled-tour-guide-application.html https://www.suretekinfosoft.com/case-studies/empowering-a-russian-travel-operator-to-deliver-hyper-personalized-tourist-experiences.php
+Redirect 301 /should-you-choose-web,native,or-hybrid-mobile-development.html https://www.suretekinfosoft.com/mobile-app-development.php
+Redirect 301 /top-blockchain-frameworks-to-build-you-own-blockchain.html https://www.suretekinfosoft.com/blogs.php
+Redirect 301 /top-web-development-frameworks-2019.html https://www.suretekinfosoft.com/blogs.php
+Redirect 301 /top-mobile-app-development-frameworks-2019.html https://www.suretekinfosoft.com/blogs.php
+Redirect 301 /factory-automation-of-cnc-machine-tools.html https://www.suretekinfosoft.com/case-studies/factory-automation-of-cnc-machine-tools-for-a-denmark-based-manufacturer.php
+Redirect 301 /online-web-portal-and-mobile-app-for-buying-&-selling-cars.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /artificial-intelligence-vs-machine-learning.html https://www.suretekinfosoft.com/blogs.php
+Redirect 301 /chatbot-development-for-e-commerce.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /interpreter-scheduling-portal.html https://www.suretekinfosoft.com/case-studies/next-gen-interpreter-scheduling-portal-for-language-service-providers.php
+Redirect 301 /gps-web-based-vehicle-route-scheduling-application.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /web-based-online-booking-portal.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /crypto-trading-platform.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /react-vs-angular.html https://www.suretekinfosoft.com/blogs.php
+Redirect 301 /Web-to-print-platform.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /Automating-University-Management-System.html https://www.suretekinfosoft.com/blogs.php
+Redirect 301 /Testing-augment-reality-mobile-app.html https://www.suretekinfosoft.com/blogs.php
+Redirect 301 /Web-based-Crowdfunding-Portal.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /cms-comparison.html https://www.suretekinfosoft.com/blogs.php
+Redirect 301 /Open-Source-Proprietary.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /Insurance-Agency.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /Visitor-Mangement.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /price-comparison-web-app.html https://www.suretekinfosoft.com/blogs.php
+Redirect 301 /taxi-service-mobile-app.html https://www.suretekinfosoft.com/case-studies/improve-ride-efficiency-by-45-with-taxi-booking-app-development.php
+Redirect 301 /cryptocurrency.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /data-security.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /themakeoverplace.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /MediaandEntertainmentDigitalBooking.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /docs/shopfloor_scheduling_system_casestudy_page.pdf https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /web_enabling.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /Real-Estate-Web-Application.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /blockchain-enabled.html https://www.suretekinfosoft.com/case-studies/suretek-helped-dao-transform-healthcare.php
+Redirect 301 /verifiable-nursing.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /web-based-health-ehr.html https://www.suretekinfosoft.com/case-studies/how-suretek-helped-a-us-healthcare-provider-go-fully-digital-with-a-secure-ehr-system.php
+Redirect 301 /improving_transportation.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /shop_floor_scheduling_system.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /visitorsessionrecordingandreplay_casestudy.html https://www.suretekinfosoft.com/case-studies.php
+Redirect 301 /music-streaming-platfrom.html https://www.suretekinfosoft.com/case-studies/powerful-music-streaming-app.php
+Redirect 301 "/docs/ECommerce%20native%20mobile%20app.pdf" "https://www.suretekinfosoft.com/case-studies.php"
+Redirect 301 "/docs/IOT_Logistics_CaseStudy.pdf" "https://www.suretekinfosoft.com/case-studies.php"
+
+# new 25-11-25
+Redirect 301 /eCommerce-native-mobile.html https://www.suretekinfosoft.com/case-studies/from-website-to-mobile-cart-how-suretek-helped-a-swedish-brand-go-truly-omnichannel.php
+Redirect 301 /ai-is-disrupting-mobile-app-security-are-you-ready-for-the-new-threat.html https://www.suretekinfosoft.com/blogs/ai-is-disrupting-mobile-app-security-are-you-ready-for-the-new-threat.php
+Redirect 301 /crypto-trading-platform.html https://www.suretekinfosoft.com/case-studies/engineered-a-next-gen-crypto-exchange-for-canadian-client.php
+Redirect 301 /Testing-augment-reality-mobile-app.html https://www.suretekinfosoft.com/case-studies/smart-testing-for-smarter-reality-qa-success-for-a-uk-startups-augmented-reality-app.php
+ 
+
+
+# not redirecting properly
+# Redirect 301 "/docs/Concert%20and%20Artist%20Review%20Platform_CaseStudy.pdf" "https://www.suretekinfosoft.com/case-studies.php"
+# Redirect 301 "/docs/Visitor%20Session%20Recording%20and%20Replay_CaseStudy.pdf" "https://www.suretekinfosoft.com/case-studies.php"
+
+# blogs redirections
+Redirect 301 /centraldatabasedistributionsystem.html https://suretekinfosoft.com/case-studies/building-unified-hotel-managemnt-system.php
+Redirect 301 /concert-and-artist-review-platform.html https://suretekinfosoft.com/case-studies/suretek-transformed-concert-review-platform.php
+Redirect 301 /eCommerce-native-mobile.html https://suretekinfosoft.com/case-studies/from-website-to-mobile-cart-how-suretek-helped-a-swedish-brand-go-truly-omnichannel.php
+Redirect 301 /Web_Based_ERP.html https://suretekinfosoft.com/case-studies/suretek-transformed-inventory-and-order-management.php
+Redirect 301 /EnergyManagementSystem.html https://suretekinfosoft.com/case-studies/smart-automation-transformed-energy-management.php
+
+# change url of blogs and case studies
+Redirect 301 /blogs/mistakes-SMBs-make-in-cloud-adoption.php https://www.suretekinfosoft.com/blogs/mistakes-smbs-make-in-cloud-adoption.php
+Redirect 301 /case-studies/strengthening-US-qsr-platform.php https://www.suretekinfosoft.com/case-studies/strengthening-us-qsr-platform.php
+Redirect 301 /case-studies/transforming-online-commerce-to-scale-smater.php https://www.suretekinfosoft.com/case-studies/transforming-online-commerce-to-scale-smarter.php
+
+
+
+
+# --- CAREERS / JOBS ---
+
+Redirect 301 /careers.html https://suretekinfosoft.com/careers.php
+
+Redirect 301 /work-at-suretek.html https://suretekinfosoft.com/careers.php
+
+Redirect 301 /current_openings.html https://suretekinfosoft.com/careers.php
+
+
+
+# --- CONTACT PAGE ---
+
+Redirect 301 /contact_us.php https://suretekinfosoft.com/contact-us.php
+
+
+
+# --- EVENTS / CONFERENCES ---
+
+Redirect 301 /malaysia-september.html https://suretekinfosoft.com/malaysia-september.php
+
+Redirect 301 /usa-may.html https://suretekinfosoft.com/usa-may.php
+
+Redirect 301 /sweden-september.html https://suretekinfosoft.com/sweden-september.php
+
+Redirect 301 /netherlands-march.html https://suretekinfosoft.com/netherlands-march.php
+
+Redirect 301 /sweden-april.html https://suretekinfosoft.com/sweden-april.php
+
+
+
+# ==========================================================
+
+# ðŸ”§ Browser Caching Optimization
+
+# ==========================================================
+
+<IfModule mod_expires.c>
+
+  ExpiresActive On
+
+
+
+  # Images
+
+  ExpiresByType image/webp "access plus 1 year"
+
+  ExpiresByType image/png "access plus 1 year"
+
+  ExpiresByType image/jpeg "access plus 1 year"
+
+  ExpiresByType image/jpg "access plus 1 year"
+
+  ExpiresByType image/gif "access plus 1 year"
+
+  ExpiresByType image/svg+xml "access plus 1 year"
+
+
+
+  # Fonts
+
+  ExpiresByType font/woff2 "access plus 1 year"
+
+  ExpiresByType font/woff "access plus 1 year"
+
+  ExpiresByType font/ttf "access plus 1 year"
+
+
+
+  # CSS and JS
+
+  ExpiresByType text/css "access plus 1 month"
+
+  ExpiresByType application/javascript "access plus 1 month"
+
+  ExpiresByType text/javascript "access plus 1 month"
+
+</IfModule>
+
+
+
+<IfModule mod_headers.c>
+
+  # Set cache-control headers for static assets
+
+  <FilesMatch "\.(webp|png|jpg|jpeg|gif|svg|css|js|woff2|woff|ttf)$">
+
+    Header set Cache-Control "public, max-age=31536000, immutable"
+
+  </FilesMatch>
+
+</IfModule>
+

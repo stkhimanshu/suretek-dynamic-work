@@ -1,0 +1,39 @@
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  include(components/header.php): Failed to open stream: No such file or directory in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 19
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  include(): Failed opening 'components/header.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 19
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 31
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 49
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 57
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 90
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 92
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 116
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 118
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 142
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 144
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 190
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 194
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 216
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 220
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 242
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 246
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 268
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 272
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 294
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 298
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 320
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 324
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 380
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 392
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 404
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 416
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  include(components/footer.php): Failed to open stream: No such file or directory in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 446
+[06-Jan-2026 08:35:54 UTC] PHP Warning:  include(): Failed opening 'components/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 446
+[06-Jan-2026 08:37:34 UTC] PHP Warning:  include(components/footer.php): Failed to open stream: No such file or directory in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 446
+[06-Jan-2026 08:37:34 UTC] PHP Warning:  include(): Failed opening 'components/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 446
+[06-Jan-2026 08:38:38 UTC] PHP Warning:  include(components/footer.php): Failed to open stream: No such file or directory in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 446
+[06-Jan-2026 08:38:38 UTC] PHP Warning:  include(): Failed opening 'components/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 446
+[06-Jan-2026 08:42:49 UTC] PHP Warning:  include(../omponents/footer.php): Failed to open stream: No such file or directory in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 102
+[06-Jan-2026 08:42:49 UTC] PHP Warning:  include(): Failed opening '../omponents/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 102
+[06-Jan-2026 08:43:22 UTC] PHP Warning:  include(../omponents/footer.php): Failed to open stream: No such file or directory in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 102
+[06-Jan-2026 08:43:22 UTC] PHP Warning:  include(): Failed opening '../omponents/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 102
+[06-Jan-2026 08:43:26 UTC] PHP Warning:  include(../omponents/footer.php): Failed to open stream: No such file or directory in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 102
+[06-Jan-2026 08:43:26 UTC] PHP Warning:  include(): Failed opening '../omponents/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/p6bds3scc4nu/public_html/event/diwali-2025.php on line 102

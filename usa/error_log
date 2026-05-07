@@ -1,0 +1,31 @@
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  include(components/header.php): Failed to open stream: No such file or directory in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 19
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  include(): Failed opening 'components/header.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 19
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 29
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 41
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 49
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 53
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 231
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 253
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 275
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 341
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 351
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 369
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 379
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 397
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 407
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 425
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 435
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 453
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 463
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 481
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 491
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 509
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 519
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 537
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 547
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  Undefined variable $baseurl in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 591
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  include(components/footer.php): Failed to open stream: No such file or directory in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 623
+[30-Apr-2026 06:38:13 UTC] PHP Warning:  include(): Failed opening 'components/footer.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/p6bds3scc4nu/public_html/usa/usa-may.php on line 623
+[01-May-2026 11:09:57 UTC] PHP Parse error:  syntax error, unexpected identifier "https" in /home/p6bds3scc4nu/public_html/usa/denmark-landing.php on line 17
+[01-May-2026 11:10:01 UTC] PHP Parse error:  syntax error, unexpected identifier "https" in /home/p6bds3scc4nu/public_html/usa/denmark-landing.php on line 17
+[01-May-2026 11:10:22 UTC] PHP Parse error:  syntax error, unexpected identifier "https" in /home/p6bds3scc4nu/public_html/usa/denmark-landing.php on line 17
