@@ -10,7 +10,9 @@ if (isset($_SESSION['admin_id'])) {
 /** @var mysqli $conn */
 include("../includes/config.php");
 
-$error = "";
+$error = $_SESSION['login_error'] ?? '';
+
+unset($_SESSION['login_error']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -41,7 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     } else {
 
-        $error = "Invalid email or password";
+        $_SESSION['login_error'] = "Invalid email or password";
+        header("Location: login.php");
+        exit;
     }
 }
 ?>

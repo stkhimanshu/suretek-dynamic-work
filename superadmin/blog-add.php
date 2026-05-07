@@ -89,7 +89,7 @@ if (isset($_POST['add_category'])) {
                             <span class="w-5 h-5 rounded-full bg-[#a22426] text-white text-[11px] font-medium flex items-center justify-center flex-shrink-0">✦</span>
                             Featured Image
                         </h2>
-                        <div id="uploadZone" class="relative rounded-xl border-2 border-dashed border-[#d1c9c9] bg-[#fdfcfc] hover:border-[#a22426] hover:bg-[#fdf5f5] transition-all duration-200 cursor-pointer p-10 text-center">
+                        <div id="uploadZone" class="relative rounded-xl border-2 border-dashed border-[#d1c9c9] bg-[#fdfcfc] hover:border-[#a22426] hover:bg-[#fdf5f5] transition-all duration-200 cursor-pointer p-10 text-center mb-3">
                             <input type="file" name="image" accept="image/*" id="imageInput" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
                             <div id="upload-placeholder">
                                 <div class="mx-auto mb-3 w-12 h-12 rounded-full bg-red-50 flex items-center justify-center">
@@ -107,7 +107,14 @@ if (isset($_POST['add_category'])) {
                                 <button type="button" onclick="clearImage()" class="relative z-20 text-xs text-[#a22426] hover:underline cursor-pointer">Remove image</button>
                             </div>
                         </div>
+                        <!-- Image Alt Text -->
+                        <div class="mb-2">
+                            <label class="block text-xs font-medium text-[#424649]/70 uppercase tracking-wide w-full">Image Alt Text</label>
+                            <input type="text" name="image_alt" placeholder="e.g. Hero banner showing product"
+                                class="w-full rounded-lg px-4 py-3 text-sm text-[#424649] placeholder-gray-400 border-[1.5px] border-[#e0dcdc] bg-white focus:outline-none focus:border-[#a22426] focus:ring-2 focus:ring-[#a22426]/10 transition-colors">
+                        </div>
                     </div>
+
 
                     <!-- Card: Post Content -->
                     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
@@ -118,12 +125,7 @@ if (isset($_POST['add_category'])) {
                                 <span class="w-5 h-5 rounded-full bg-[#a22426] text-white text-[11px] font-medium flex items-center justify-center flex-shrink-0">1</span>
                                 <h2 class="text-base font-medium text-[#424649]">Meta Information</h2>
                             </div>
-                            <!-- Image Alt Text -->
-                            <div class="mb-2">
-                                <label class="block text-xs font-medium text-[#424649]/70 uppercase tracking-wide w-full">Image Alt Text</label>
-                                <input type="text" name="image_alt" placeholder="e.g. Hero banner showing product"
-                                    class="w-full rounded-lg px-4 py-3 text-sm text-[#424649] placeholder-gray-400 border-[1.5px] border-[#e0dcdc] bg-white focus:outline-none focus:border-[#a22426] focus:ring-2 focus:ring-[#a22426]/10 transition-colors">
-                            </div>
+
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
                                 <!-- Meta Title -->
@@ -266,6 +268,7 @@ if (isset($_POST['add_category'])) {
                             </div>
                             <p class="text-xs text-[#424649]/55 mt-1.5 pl-6">Post will be published immediately after saving.</p>
                         </div>
+                        <input type="hidden" name="status" value="0">
                         <button type="submit" name="submit"
                             class="w-full bg-[#a22426] hover:bg-[#881e20] active:scale-[0.98] text-white rounded-lg py-3 text-sm font-medium tracking-wide flex items-center justify-center gap-2 transition-all duration-200 mb-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

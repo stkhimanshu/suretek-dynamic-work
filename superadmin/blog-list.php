@@ -20,7 +20,7 @@ $offset = ($page - 1) * $limit;
 |--------------------------------------------------------------------------
 */
 
-$where = "WHERE b.status = 1";
+$where = "WHERE 1";
 
 if ($search !== '') {
 
@@ -107,19 +107,19 @@ $result = mysqli_query($conn, $query);
                 <h1 class="text-xl sm:text-2xl font-semibold text-gray-900">Blog List</h1>
                 <p class="text-sm text-gray-500 mt-0.5">Manage all blogs</p>
             </div>
-           <div>
-             <a href="blog-add.php"
-                class="inline-flex items-center justify-center gap-1.5 bg-[#a22426] hover:bg-[#8a1e20] text-white px-4 py-2.5 rounded-lg text-sm font-medium transition-colors w-full sm:w-auto">
-                <span class="text-base leading-none">+</span> Add Blog
-            </a>
+            <div>
+                <a href="blog-add.php"
+                    class="inline-flex items-center justify-center gap-1.5 bg-[#a22426] hover:bg-[#8a1e20] text-white px-4 py-2.5 rounded-lg text-sm font-medium mb-2 transition-colors w-full sm:w-auto">
+                    <span class="text-base leading-none">+</span> Add Blog
+                </a>
                 <a href="logout.php"
-                class="inline-flex items-center justify-center gap-1.5 bg-[#000] hover:bg-[#8a1e20] text-white px-4 py-2.5 rounded-lg text-sm font-medium transition-colors w-full sm:w-auto">
-                <span class="text-base leading-none"><i class="ti ti-logout text-base"></i></span>Log Out
-            </a>
-           </div>
+                    class="inline-flex items-center justify-center gap-1.5 bg-[#000] hover:bg-[#8a1e20] text-white px-4 py-2.5 rounded-lg text-sm font-medium mb-2 transition-colors w-full sm:w-auto">
+                    <span class="text-base leading-none"><i class="ti ti-logout text-base"></i></span>Log Out
+                </a>
+            </div>
         </div>
 
-        <!-- Desktop Table -->
+        <!-- Search / Filter Form -->
         <form method="GET"
             class="flex flex-col md:flex-row gap-3 mb-6">
 
@@ -167,7 +167,6 @@ $result = mysqli_query($conn, $query);
                 <button
                     type="submit"
                     class="bg-[#a22426] hover:bg-[#8a1e20] text-white px-5 py-2 rounded-lg text-sm transition-colors">
-
                     Search
                 </button>
 
@@ -175,13 +174,14 @@ $result = mysqli_query($conn, $query);
                 <a
                     href="blog-list.php"
                     class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-5 py-2 rounded-lg text-sm transition-colors">
-
                     Clear Filter
                 </a>
 
             </div>
 
         </form>
+
+        <!-- Desktop Table -->
         <div class="hidden md:block overflow-x-auto rounded-xl border border-gray-200">
 
             <table class="w-full text-sm">
@@ -190,6 +190,7 @@ $result = mysqli_query($conn, $query);
                         <th class="px-4 py-3 w-24">Image</th>
                         <th class="px-4 py-3">Title</th>
                         <th class="px-4 py-3 w-36">Category</th>
+                        <th class="px-4 py-3 w-36">Status</th>
                         <th class="px-4 py-3 w-32">Date</th>
                         <th class="px-4 py-3 w-32 text-center">Actions</th>
                     </tr>
@@ -213,6 +214,40 @@ $result = mysqli_query($conn, $query);
                                     <?= htmlspecialchars($row['category_name']) ?>
                                 </span>
                             </td>
+                            <td class="px-4 py-3">
+
+                                <?php
+
+                                $statusClasses = [
+                                    0 => 'bg-yellow-50 text-yellow-700 border-yellow-200',
+                                    1 => 'bg-green-50 text-green-700 border-green-200',
+                                    2 => 'bg-red-50 text-red-700 border-red-200',
+                                ];
+
+                                ?>
+
+                                <select
+                                    class="status-dropdown px-3 py-2 rounded-lg text-xs font-semibold border outline-none transition-all <?= $statusClasses[$row['status']] ?>"
+                                    data-id="<?= $row['id'] ?>">
+
+                                    <option value="0"
+                                        <?= $row['status'] == 0 ? 'selected' : '' ?>>
+                                        Pending
+                                    </option>
+
+                                    <option value="1"
+                                        <?= $row['status'] == 1 ? 'selected' : '' ?>>
+                                        Active
+                                    </option>
+
+                                    <option value="2"
+                                        <?= $row['status'] == 2 ? 'selected' : '' ?>>
+                                        Rejected
+                                    </option>
+
+                                </select>
+
+                            </td>
                             <td class="px-4 py-3 text-gray-500 whitespace-nowrap">
                                 <?= date("d M Y", strtotime($row['created_at'])) ?>
                             </td>
@@ -234,6 +269,8 @@ $result = mysqli_query($conn, $query);
                 </tbody>
             </table>
         </div>
+
+        <!-- Pagination -->
         <?php if ($totalPages > 1): ?>
 
             <div class="flex flex-wrap justify-center gap-2 mt-8">
@@ -286,6 +323,12 @@ $result = mysqli_query($conn, $query);
         <?php
         // Reset result pointer for mobile view
         mysqli_data_seek($result, 0);
+
+        $statusClasses = [
+            0 => 'bg-yellow-50 text-yellow-700 border-yellow-200',
+            1 => 'bg-green-50 text-green-700 border-green-200',
+            2 => 'bg-red-50 text-red-700 border-red-200',
+        ];
         ?>
         <div class="md:hidden space-y-3">
             <?php while ($row = mysqli_fetch_assoc($result)): ?>
@@ -309,7 +352,22 @@ $result = mysqli_query($conn, $query);
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-2 mt-3 pt-3 border-t border-gray-100">
+
+                    <!-- Status Dropdown — now visible on mobile -->
+                    <div class="mt-3 pt-3 border-t border-gray-100">
+                        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Status</label>
+                        <select
+                            class="status-dropdown w-full px-3 py-2 rounded-lg text-xs font-semibold border outline-none transition-all <?= $statusClasses[$row['status']] ?>"
+                            data-id="<?= $row['id'] ?>">
+
+                            <option value="0" <?= $row['status'] == 0 ? 'selected' : '' ?>>Pending</option>
+                            <option value="1" <?= $row['status'] == 1 ? 'selected' : '' ?>>Active</option>
+                            <option value="2" <?= $row['status'] == 2 ? 'selected' : '' ?>>Rejected</option>
+
+                        </select>
+                    </div>
+
+                    <div class="flex gap-2 mt-3">
                         <a href="blog-edit.php?id=<?= $row['id'] ?>"
                             class="flex-1 text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-xs font-medium transition-colors">
                             Edit
@@ -324,7 +382,7 @@ $result = mysqli_query($conn, $query);
             <?php endwhile; ?>
         </div>
 
-        <!-- Empty State (optional, shown when no blogs exist) -->
+        <!-- Empty State -->
         <?php if (mysqli_num_rows($result) === 0): ?>
             <div class="text-center py-16 text-gray-400">
                 <p class="text-4xl mb-3">📄</p>
@@ -360,6 +418,44 @@ $result = mysqli_query($conn, $query);
                     }
                 });
         }
+
+        // Shared colour map for status dropdowns (desktop + mobile)
+        const statusColors = {
+            0: ['bg-yellow-50', 'text-yellow-700', 'border-yellow-200'],
+            1: ['bg-green-50',  'text-green-700',  'border-green-200'],
+            2: ['bg-red-50',    'text-red-700',    'border-red-200'],
+        };
+
+        const allClasses = Object.values(statusColors).flat();
+
+        document.querySelectorAll('.status-dropdown').forEach(dropdown => {
+
+            dropdown.addEventListener('change', function() {
+
+                const blogId = this.dataset.id;
+                const status = this.value;
+
+                // Update colours
+                this.classList.remove(...allClasses);
+                this.classList.add(...statusColors[status]);
+
+                const fd = new FormData();
+                fd.append('action', 'change_status');
+                fd.append('blog_id', blogId);
+                fd.append('status', status);
+
+                fetch('../api/blog.php', {
+                        method: 'POST',
+                        body: fd
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.status !== 'success') {
+                            alert(data.message);
+                        }
+                    });
+            });
+        });
     </script>
 
 </body>

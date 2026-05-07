@@ -153,14 +153,31 @@ function buildFaq($data)
     return json_encode($faqs, JSON_UNESCAPED_UNICODE);
 }
 // ========================
+// Change Blog Status Service
+// ========================
+function changeBlogStatus($conn, $blogId, $status)
+{
+    $blogId = (int)$blogId;
+    $status = (int)$status;
+
+    $query = "
+        UPDATE blog
+        SET status = '$status'
+        WHERE id = '$blogId'
+    ";
+
+    return mysqli_query($conn, $query);
+}
+// ========================
 // Add Blog Query
 // ========================
 function addBlog($conn, $data, $files)
 {
     $title = mysqli_real_escape_string($conn, $data['title']);
     $category_id = (int)$data['category_id'];
-    $description = mysqli_real_escape_string($conn, $data['description'] ?? '');
+    // $description = mysqli_real_escape_string($conn, $data['description'] ?? '');
 
+    $status = isset($data['status']) ? (int)$data['status'] : 0;
     $slug = generateSlug($title);
     $imageName = uploadImage($files['image'] ?? null);
     $meta_json = mysqli_real_escape_string($conn, buildMeta($data));
@@ -170,9 +187,9 @@ function addBlog($conn, $data, $files)
     $highlight_json = mysqli_real_escape_string($conn, $data['highlight_words_json'] ?? '[]');
 
     $query = "INSERT INTO blog 
-        (title, category_id, slug, description, seo_meta, sections, introdetail, image, faq, highlight_words, status)
+        (title, category_id, slug, seo_meta, sections, introdetail, image, faq, highlight_words, status)
         VALUES 
-        ('$title', '$category_id', '$slug', '$description', '$meta_json', '$sections_json', '$intro_json', '$imageName', '$faq_json', '$highlight_json', 1)";
+        ('$title', '$category_id', '$slug', '$meta_json', '$sections_json', '$intro_json', '$imageName', '$faq_json', '$highlight_json', '$status')";
 
     return mysqli_query($conn, $query);
 }

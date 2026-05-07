@@ -22,6 +22,8 @@ switch ($action) {
     */
     case 'add_blog':
 
+        // Default status = Inactive/Draft
+        $status = isset($_POST['status']) ? (int)$_POST['status'] : 0;
         // Handle highlight words here (cleaning only)
         $highlightRaw = $_POST['highlight_words'] ?? '';
         $highlightArr = array_filter(array_map('trim', explode(',', $highlightRaw)));
@@ -34,6 +36,49 @@ switch ($action) {
             "status" => $result ? "success" : "error",
             "message" => $result ? "Blog added successfully" : "Failed to add blog"
         ]);
+        break;
+    /*
+    |--------------------------------------------------------------------------
+    | Change BLOG Status
+    |--------------------------------------------------------------------------
+    */
+    case 'change_status':
+
+        $blogId = (int)($_POST['blog_id'] ?? 0);
+        $status = (int)($_POST['status'] ?? 0);
+
+        // Allowed statuses
+        $allowedStatuses = [0, 1, 2];
+
+        if (
+            $blogId <= 0 ||
+            !in_array($status, $allowedStatuses)
+        ) {
+
+            echo json_encode([
+                "status" => "error",
+                "message" => "Invalid request"
+            ]);
+
+            exit;
+        }
+
+        $updated = changeBlogStatus($conn, $blogId, $status);
+
+        if ($updated) {
+
+            echo json_encode([
+                "status" => "success",
+                "message" => "Blog status updated successfully"
+            ]);
+        } else {
+
+            echo json_encode([
+                "status" => "error",
+                "message" => "Failed to update blog status"
+            ]);
+        }
+
         break;
     /*
     |--------------------------------------------------------------------------
