@@ -1,51 +1,37 @@
 <?php
+
+require_once __DIR__ . '/app/Core/Http/ApiClient.php';
+require_once __DIR__ . '/app/Core/Http/ApiResponse.php';
 require_once __DIR__ . '/config/global-variables.php';
+
+use App\Core\Http\ApiClient;
+
 session_start();
-if (isset($_SESSION['admin_id'])) {
-    header("Location:" .  ADMIN_PATH . '/pages/dashboard.php');
-    exit;
-}
-
-/** @var mysqli $conn */
-include("../includes/config.php");
-
-$error = $_SESSION['login_error'] ?? '';
-
-unset($_SESSION['login_error']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
+    $response = ApiClient::post('/api/v1/auth/login', [
+        'email' => $_POST['email'],
+        'password' => $_POST['password']
+    ]);
 
-    $email = mysqli_real_escape_string($conn, $email);
+    if ($response->success()) {
 
-    $query = mysqli_query(
-        $conn,
-        "SELECT * FROM admin_users
-         WHERE email = '$email'
-         AND status = 1
-         LIMIT 1"
-    );
-
-    $user = mysqli_fetch_assoc($query);
-
-    if ($user && password_verify($password, $user['password'])) {
+        $data = $response->data();
+        $user = $data['user'];
 
         $_SESSION['admin_id'] = $user['id'];
+        $_SESSION['admin_name'] = $user['first_name'] . ' ' . $user['last_name'];
+        $_SESSION['admin_role'] = $user['role_id'] && $user['role_id'] == 1 ? "superadmin" : "admin";
 
-        $_SESSION['admin_name'] = $user['name'];
-
-        $_SESSION['admin_role'] = $user['role'];
-
-        header("Location:" .  ADMIN_PATH . '/pages/dashboard.php');
-        exit;
-    } else {
-
-        $_SESSION['login_error'] = "Invalid email or password";
-        header("Location: login.php");
+        header('Location:' . ADMIN_PATH . '/pages/dashboard.php');
         exit;
     }
+
+    $_SESSION['login_error'] = $response->message();
+
+    header('Location: login.php');
+    exit;
 }
 ?>
 
