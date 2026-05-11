@@ -39,14 +39,19 @@ class QueryBuilder
 
     public function where(
         string $column,
-        string $operator,
-        mixed $value
+        string|int|float|bool|null $operatorOrValue,
+        mixed $value = null
     ): self {
+        $operator = '=';
+        $binding = $operatorOrValue;
 
-        $this->wheres[] =
-            "{$column} {$operator} ?";
+        if (func_num_args() === 3) {
+            $operator = (string) $operatorOrValue;
+            $binding = $value;
+        }
 
-        $this->bindings[] = $value;
+        $this->wheres[] = "{$column} {$operator} ?";
+        $this->bindings[] = $binding;
 
         return $this;
     }
@@ -114,6 +119,47 @@ class QueryBuilder
         return $stmt->execute(
             array_values($data)
         );
+    }
+
+    public function update(array $data): bool
+    {
+        if (empty($data)) {
+            return false;
+        }
+
+        $setClause = implode(
+            ', ',
+            array_map(
+                fn(string $column): string => "{$column} = ?",
+                array_keys($data)
+            )
+        );
+
+        $sql = "UPDATE {$this->table} SET {$setClause}";
+
+        if (!empty($this->wheres)) {
+            $sql .= " WHERE " . implode(' AND ', $this->wheres);
+        }
+
+        $stmt = $this->pdo->prepare($sql);
+
+        return $stmt->execute([
+            ...array_values($data),
+            ...$this->bindings,
+        ]);
+    }
+
+    public function delete(): bool
+    {
+        $sql = "DELETE FROM {$this->table}";
+
+        if (!empty($this->wheres)) {
+            $sql .= " WHERE " . implode(' AND ', $this->wheres);
+        }
+
+        $stmt = $this->pdo->prepare($sql);
+
+        return $stmt->execute($this->bindings);
     }
 
     private function toSql(): string
