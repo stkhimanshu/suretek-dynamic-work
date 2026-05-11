@@ -20,7 +20,8 @@ $formattedRole = ucwords(str_replace('_', ' ', $adminRole));
 <header
     class="fixed top-0 right-0
 h-[70px]
-w-[calc(100%-280px)]
+w-full
+lg:w-[calc(100%-280px)]
 bg-surface
 flex justify-between items-center
 px-gutter
@@ -34,7 +35,7 @@ z-40">
 
         <div>
 
-            <h3 class="text-xl font-semibold text-on-surface">
+            <h3 class="text-base lg:text-xl font-semibold pl-10 text-on-surface">
                 Suretek CMS
             </h3>
 
@@ -115,11 +116,11 @@ z-40">
 
             <div class="leading-tight text-right">
 
-                <p class="text-sm font-semibold text-on-surface">
+                <p class="text-xs lg:text-sm font-semibold text-on-surface">
                     <?= htmlspecialchars($adminName) ?>
                 </p>
 
-                <p class="text-xs text-slate-500 uppercase tracking-wide">
+                <p class="text-[10px] lg:text-xs text-slate-500 uppercase tracking-wide">
                     <?= htmlspecialchars($formattedRole) ?>
                 </p>
 
@@ -128,7 +129,7 @@ z-40">
             <!-- AVATAR -->
 
             <div
-                class="w-11 h-11
+                class="w-10 lg:w-11 h-10 lg:h-11
             rounded-full
             bg-gradient-to-br
             from-primary

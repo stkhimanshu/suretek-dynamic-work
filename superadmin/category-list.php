@@ -1,5 +1,5 @@
-<?php include("../includes/config.php");
-include("auth-check.php");
+<?php
+include("../../../includes/config.php");
 ?>
 
 <!DOCTYPE html>
@@ -154,9 +154,9 @@ include("auth-check.php");
     </style>
 </head>
 
-<body class="bg-[#f5f4f0] min-h-screen p-4 sm:p-8">
+<body class="bg-[#f5f4f0] min-h-screen">
 
-    <div class="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+    <div class="mx-auto bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
 
         <!-- Header -->
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">

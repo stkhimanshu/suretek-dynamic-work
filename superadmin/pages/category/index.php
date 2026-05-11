@@ -1,6 +1,6 @@
 <?php
 
-$pageTitle = 'Create Blog';
+$pageTitle = 'Categories';
 
 include("../../auth-check.php");
 include '../../components/layout-start.php';
@@ -8,7 +8,7 @@ include '../../components/layout-start.php';
 ?>
 
 <section>
-    <?php include("../../blog-add.php"); ?>
+    <?php include("../../category-list.php"); ?>
 </section>
 
 <?php include '../../components/layout-end.php'; ?>

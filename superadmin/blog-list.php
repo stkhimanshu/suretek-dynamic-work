@@ -111,10 +111,10 @@ $result = mysqli_query($conn, $query);
                     class="inline-flex items-center justify-center gap-1.5 bg-[#a22426] hover:bg-[#8a1e20] text-white px-4 py-2.5 rounded-lg text-sm font-medium mb-2 transition-colors w-full sm:w-auto">
                     <span class="text-base leading-none">+</span> Add Blog
                 </a>
-                <a href="logout.php"
+                <!-- <a href="logout.php"
                     class="inline-flex items-center justify-center gap-1.5 bg-[#000] hover:bg-[#8a1e20] text-white px-4 py-2.5 rounded-lg text-sm font-medium mb-2 transition-colors w-full sm:w-auto">
                     <span class="text-base leading-none"><i class="ti ti-logout text-base"></i></span>Log Out
-                </a>
+                </a> -->
             </div>
         </div>
 
@@ -170,8 +170,7 @@ $result = mysqli_query($conn, $query);
                 </button>
 
                 <!-- Clear Filter -->
-                <a
-                    href="blog-list.php"
+                <a href="<?= ADMIN_PATH . "/pages/blogs" ?>"
                     class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-5 py-2 rounded-lg text-sm transition-colors">
                     Clear Filter
                 </a>
@@ -387,7 +386,7 @@ $result = mysqli_query($conn, $query);
                 <p class="text-4xl mb-3">📄</p>
                 <p class="font-medium text-gray-600">No blogs found</p>
                 <p class="text-sm mt-1">Get started by adding your first blog post.</p>
-                <a href="blog-add.php"
+                <a href="<?= ADMIN_PATH . "/pages/blogs/create.php" ?>"
                     class="inline-block mt-4 bg-[#a22426] text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-[#8a1e20] transition-colors">
                     + Add Blog
                 </a>
