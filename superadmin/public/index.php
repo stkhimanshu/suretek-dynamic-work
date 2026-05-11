@@ -9,6 +9,8 @@ require_once dirname(__DIR__) . '/bootstrap/init.php';
 
 require_once dirname(__DIR__) . '/routes/api.php';
 
+use App\Core\Middleware\CorsMiddleware;
 use App\Core\Routing\Router;
 
+CorsMiddleware::handle();
 Router::dispatch();
