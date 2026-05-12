@@ -5,7 +5,7 @@ include("../includes/config.php");
 
 $query = "SELECT b.*, c.title as category_name 
           FROM blog b
-          LEFT JOIN blog_category c ON b.category_id = c.id
+          LEFT JOIN categories c ON b.category_id = c.id
           WHERE b.status=1
           ORDER BY b.id DESC";
 
@@ -21,7 +21,7 @@ if (!$recentQuery) die("Query Failed: " . mysqli_error($conn));
 
 $catQuery = mysqli_query($conn, "
     SELECT id, title
-    FROM blog_category 
+    FROM categories 
     ORDER BY title ASC
 ");
 if (!$catQuery) die("Category SQL Error: " . mysqli_error($conn));
