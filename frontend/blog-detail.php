@@ -11,7 +11,7 @@ $slug = $_GET['slug'] ?? '';
 
 $stmt = mysqli_prepare($conn, "SELECT b.*, c.title as category_name 
           FROM blog b
-          LEFT JOIN blog_category c ON b.category_id = c.id
+          LEFT JOIN categories c ON b.category_id = c.id
           WHERE b.slug = ?");
 mysqli_stmt_bind_param($stmt, 's', $slug);
 mysqli_stmt_execute($stmt);
