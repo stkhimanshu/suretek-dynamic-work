@@ -2,7 +2,7 @@
 
 function getCategories($conn)
 {
-    $res = mysqli_query($conn, "SELECT * FROM blog_category WHERE status=1");
+    $res = mysqli_query($conn, "SELECT * FROM categories WHERE status=1");
     return mysqli_fetch_all($res, MYSQLI_ASSOC);
 }
 // ========================

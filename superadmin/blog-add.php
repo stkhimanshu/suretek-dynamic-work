@@ -623,7 +623,7 @@ if (isset($_POST['add_category'])) {
             const formData = new FormData(this);
             formData.append('action', 'add_blog');
 
-            fetch('../api/blog.php', {
+            fetch('../../../api/blog.php', {
                     method: 'POST',
                     body: formData
                 })

@@ -47,7 +47,7 @@ if ($category > 0) {
 $countQuery = "
     SELECT COUNT(*) as total
     FROM blog b
-    LEFT JOIN blog_category c
+    LEFT JOIN categories c
     ON b.category_id = c.id
 
     $where
@@ -70,7 +70,7 @@ $query = "
 
     FROM blog b
 
-    LEFT JOIN blog_category c
+    LEFT JOIN categories c
     ON b.category_id = c.id
 
     $where
@@ -141,7 +141,7 @@ $result = mysqli_query($conn, $query);
 
                 $catQuery = mysqli_query(
                     $conn,
-                    "SELECT * FROM blog_category ORDER BY title ASC"
+                    "SELECT * FROM categories ORDER BY title ASC"
                 );
 
                 while ($cat = mysqli_fetch_assoc($catQuery)):
@@ -198,7 +198,7 @@ $result = mysqli_query($conn, $query);
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="px-4 py-3">
                                 <img
-                                    src="../uploads/blog/<?= htmlspecialchars($row['image']) ?>"
+                                    src="../../../uploads/blog/<?= htmlspecialchars($row['image']) ?>"
                                     alt="<?= htmlspecialchars($row['title']) ?>"
                                     class="w-20 h-14 object-cover rounded-lg bg-gray-100">
                             </td>
@@ -251,15 +251,30 @@ $result = mysqli_query($conn, $query);
                             </td>
                             <td class="px-4 py-3">
                                 <div class="flex gap-2 justify-center">
-                                    <a href="blog-edit.php?id=<?= $row['id'] ?>" title="Edit Blog"
-                                        class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition-colors">
-                                        <i class="ti ti-pencil text-sm" aria-hidden="true"></i>
+
+                                    <!-- View Blog -->
+                                    <a href="<?= '/suretek-lat/frontend/blog-detail.php?slug=' . urlencode($row['slug']) ?>"
+                                        title="View Blog"
+                                        target="_blank"
+                                        class="w-8 h-8 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[18px]">visibility</span>
                                     </a>
+
+                                    <!-- Edit Blog -->
+                                    <a href="<?= ADMIN_PATH . "/pages/blogs/edit.php?id=" . $row['id'] ?>"
+                                        title="Edit Blog"
+                                        class="w-8 h-8 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[18px]">edit</span>
+                                    </a>
+
+                                    <!-- Delete Blog -->
                                     <button
-                                        onclick="deleteBlog(<?= $row['id'] ?>)" title="Delete Blog"
-                                        class="bg-red-500 hover:bg-red-600 text-white px-3 py-1.5 rounded-lg text-xs font-medium transition-colors">
-                                        <i class="ti ti-trash text-sm" aria-hidden="true"></i>
+                                        onclick="deleteBlog(<?= $row['id'] ?>)"
+                                        title="Delete Blog"
+                                        class="w-8 h-8 bg-red-500 hover:bg-red-600 text-white rounded-md transition-colors flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[18px]">delete</span>
                                     </button>
+
                                 </div>
                             </td>
                         </tr>
@@ -333,7 +348,7 @@ $result = mysqli_query($conn, $query);
                 <div class="border border-gray-200 rounded-xl p-3 hover:shadow-sm transition-shadow bg-white">
                     <div class="flex gap-3">
                         <img
-                            src="../uploads/blog/<?= htmlspecialchars($row['image']) ?>"
+                            src="../../../uploads/blog/<?= htmlspecialchars($row['image']) ?>"
                             alt="<?= htmlspecialchars($row['title']) ?>"
                             class="w-20 h-16 object-cover rounded-lg flex-shrink-0 bg-gray-100">
                         <div class="flex-1 min-w-0">
@@ -404,7 +419,7 @@ $result = mysqli_query($conn, $query);
             fd.append("action", "delete_blog");
             fd.append("id", id);
 
-            fetch('../api/blog.php', {
+            fetch('../../../api/blog.php', {
                     method: 'POST',
                     body: fd
                 })
@@ -442,7 +457,7 @@ $result = mysqli_query($conn, $query);
                 fd.append('blog_id', blogId);
                 fd.append('status', status);
 
-                fetch('../api/blog.php', {
+                fetch('../../../api/blog.php', {
                         method: 'POST',
                         body: fd
                     })

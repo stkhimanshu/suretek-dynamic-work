@@ -5,9 +5,8 @@
 </style>
 <?php
 /** @var mysqli $conn */
-include(__DIR__ . "/../includes/config.php");
+include("../../../includes/config.php");
 include(__DIR__ . "/../includes/blog-service.php");
-include("auth-check.php");
 
 $id = (int)($_GET['id'] ?? 0);
 
@@ -80,21 +79,6 @@ if (isset($_POST['add_category'])) {
 </head>
 
 <body class="min-h-screen bg-[#f5f4f0] text-[#424649]">
-
-    <!-- ══ NAVBAR ══ -->
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <div class="max-w-[130px]">
-                <img src="https://www.suretekinfosoft.com/assets/images/logo1.png" class="w-[130px]" alt="Logo">
-            </div>
-            <div class="flex items-center gap-1.5 text-sm text-[#424649]/60">
-                <a href="#" class="hover:text-[#a22426] transition-colors no-underline">Dashboard</a>
-                <span>/</span>
-                <span class="text-[#a22426] font-medium">New Post</span>
-            </div>
-        </div>
-    </nav>
-
     <!-- ══ PAGE BODY ══ -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class="mb-8">
@@ -316,7 +300,7 @@ if (isset($_POST['add_category'])) {
                             </svg>
                             Update Post
                         </button>
-                        <a href="../superadmin/category-add.php"
+                        <a href="../category/"
                             class="w-full bg-[#424649] hover:bg-[#2d3033] text-white rounded-lg py-3 text-sm font-medium tracking-wide flex items-center justify-center gap-2 transition-all duration-200 no-underline">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
@@ -719,7 +703,7 @@ if (isset($_POST['add_category'])) {
             formData.append('action', 'update_blog');
             formData.append('id', <?= $blog['id'] ?>);
 
-            fetch('../api/blog.php', {
+            fetch('../../../api/blog.php', {
                     method: 'POST',
                     body: formData
                 })
@@ -727,7 +711,7 @@ if (isset($_POST['add_category'])) {
                 .then(data => {
                     alert(data.message);
                     if (data.status === 'success') {
-                        window.location.href = "blog-list.php";
+                        window.location.href = "index.php";
                     };
                 })
                 .catch(err => {
