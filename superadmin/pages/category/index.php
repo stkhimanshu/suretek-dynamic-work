@@ -12,7 +12,7 @@ include '../../components/layout-start.php';
 </section>
 
 <script>
-    var CATEGORY_API_BASE = "http://admin.suretek.local/api/v1/categories";
+    var CATEGORY_API_BASE = "http://localhost/suretek-lat/superadmin/public/api/v1/categories";
     var CATEGORY_TYPE = "blog";
 
     // Helpers

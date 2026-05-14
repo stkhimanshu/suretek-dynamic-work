@@ -253,7 +253,7 @@ $result = mysqli_query($conn, $query);
                                 <div class="flex gap-2 justify-center">
 
                                     <!-- View Blog -->
-                                    <a href="<?= '/suretek-lat/frontend/blog-detail.php?slug=' . urlencode($row['slug']) ?>"
+                                    <a href="<?= '/suretek-lat/blog/' . urlencode($row['slug']) ?>"
                                         title="View Blog"
                                         target="_blank"
                                         class="w-8 h-8 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors flex items-center justify-center">

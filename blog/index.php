@@ -166,7 +166,7 @@ if (!$catQuery) die("Category SQL Error: " . mysqli_error($conn));
                         $intro = json_decode($row['introdetail'], true);
                         ?>
 
-                        <a href="blog-detail.php?slug=<?= htmlspecialchars($row['slug'] ?? '#') ?>"
+                        <a href="<?= htmlspecialchars($row['slug'] ?? '#') ?>"
                             class="blog-card group bg-white rounded-2xl overflow-hidden border border-gray-100 no-underline flex flex-col hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
                             data-category="<?= htmlspecialchars($row['category_name'] ?? '') ?>"
                             data-title="<?= htmlspecialchars($row['title']) ?>">
@@ -267,7 +267,7 @@ if (!$catQuery) die("Category SQL Error: " . mysqli_error($conn));
                     <h3 class="display text-base font-bold text-[#424649] pb-2.5 border-b-2 border-[#a22426] inline-block mb-4">Recent Posts</h3>
                     <div class="flex flex-col divide-y divide-gray-100">
                         <?php while ($recent = mysqli_fetch_assoc($recentQuery)) : ?>
-                            <a href="blog-detail.php?slug=<?= htmlspecialchars($recent['slug']) ?>"
+                            <a href="<?= htmlspecialchars($recent['slug']) ?>"
                                 class="flex gap-3 py-3 first:pt-0 last:pb-0 hover:opacity-75 transition-opacity no-underline">
                                 <img src="../uploads/blog/<?= htmlspecialchars(!empty($recent['image']) ? $recent['image'] : 'default.jpg') ?>"
                                     alt="<?= htmlspecialchars($recent['title']) ?>"

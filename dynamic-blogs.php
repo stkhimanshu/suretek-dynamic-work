@@ -86,7 +86,7 @@ include("components/header.php")
                      data-category="<?= htmlspecialchars($row['category_name'] ?? '') ?>"
                      data-title="<?= htmlspecialchars($row['title']) ?>">
 
-                     <a href="<?= $baseurl ?>frontend/blog-detail.php?slug=<?= htmlspecialchars($row['slug']) ?>"
+                     <a href="<?= $baseurl ?>blog/<?= htmlspecialchars($row['slug']) ?>"
                         class="study_card"
                         title="<?= htmlspecialchars($row['title']) ?>">
 
@@ -143,7 +143,7 @@ include("components/header.php")
                         <?php while ($recent = mysqli_fetch_assoc($recentQuery)) : ?>
 
                            <li>
-                              <a href="<?= $baseurl ?>frontend/blog-detail.php?slug=<?= htmlspecialchars($recent['slug']) ?>" class="d-flex">
+                              <a href="<?= $baseurl ?>blog/<?= htmlspecialchars($recent['slug']) ?>" class="d-flex">
 
                                  <div class="thumb">
                                     <img src="<?= $baseurl ?>uploads/blog/<?= htmlspecialchars($recent['image'] ?? 'default.jpg') ?>"

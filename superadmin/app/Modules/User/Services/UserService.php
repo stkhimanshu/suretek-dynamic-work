@@ -25,7 +25,7 @@ class UserService
                 $data['password'],
                 PASSWORD_ARGON2ID
             ),
-            'role_id' => 2,
+            'role_id' => $data['role_id'] || 2,
         ]);
     }
 }

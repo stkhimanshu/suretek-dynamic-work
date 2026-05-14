@@ -4,7 +4,7 @@ namespace App\Core\Http;
 
 class ApiClient
 {
-    private static string $baseUrl = 'http://admin.suretek.local';
+    private static string $baseUrl = 'http://localhost/suretek-lat/superadmin/public';
 
     public static function post(string $endpoint, array $payload = []): ApiResponse
     {

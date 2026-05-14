@@ -52,17 +52,18 @@ function highlightText($text, $words)
 
 
 <?php
+// print_r($data);
 $meta = json_decode($data['seo_meta'] ?? '{}', true);
 $title = $meta['meta_title'] ?? $data['title'];
 $description = $meta['meta_description'] ?? '';
-?>
-
-
-<?php
+$keywords = $title;
+$url = "https://www.suretekinfosoft.com/blogs/it-consulting-services-smarter-business.php";
+// og image
+$ogImage = "https://www.suretekinfosoft.com/assets/images/blogs/it-consulting-services-smarter-business.webp";
+// <!-- header -->
 include("../components/header.php")
 ?>
 
-<!-- header -->
 
 
 
@@ -184,7 +185,7 @@ include("../components/header.php")
                 <div class="accordion" id="customAccordion">
                     <?php if (!empty($faqs)): ?>
                         <h3 id="faq" class="mb-4 mt-5">Frequently Asked Questions (FAQ)</h3>
-                        
+
                         <?php foreach ($faqs as $i => $faq):
                             $collapseId = "collapse" . $i;
                             $isFirst = $i === 0;

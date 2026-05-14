@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Skip existing files and folders
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Blog Details Rewrite
+RewriteRule ^([a-zA-Z0-9-]+)/?$ blog-detail.php?slug=$1 [L,QSA]

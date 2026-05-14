@@ -9,8 +9,8 @@ class CorsMiddleware
         $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 
         $allowedOrigins = [
-            'http://admin.suretek.local',
-            'https://admin.suretek.local',
+            'http://localhost/suretek-lat/superadmin/public',
+            'https://localhost/suretek-lat/superadmin/public',
             'http://localhost',
             'http://127.0.0.1',
             'http://localhost:3000',
